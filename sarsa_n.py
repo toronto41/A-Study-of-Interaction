@@ -90,8 +90,8 @@ def reward(state):
     if state == goal:
         return 0
     else:
-        return -10
-    
+        return -1
+      
 # This function improves our policy.
 def improvement():
     record = [elem[0] for elem in state_actions]
