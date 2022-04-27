@@ -5,21 +5,23 @@ import math
 # We number our states 1 to 99 for each possible amount of capital
 S = [i for i in range(1,100)]
 
+# probability of winning the bet
+prob = 0.4
+# We use gamma = 1, i.e. a discounted problem, theta, the error very small
+theta = 10*10**-10
+gamma = 1
+
 # This function returns the actions we can possibly take from a state, i.e. how
 # much we can bet.
 def action_filter(s):
     return [i for i in range(1, min(s, 100 - s) + 1)]
 
-# We begin with a randomised value function and policy.
+# We begin with a randomised policy.
 pi = [rand.choice(action_filter(s)) for s in S]
-# We use gamma = 1, i.e. a discounted problem, theta, the error very small
-theta = 10*10**-10
-gamma = 1
+# Define randomised value function
 V = [1000*rand.random() for s in range(100)]
 # make sure terminal state has value 0
 V[0] = 0
-# probability of winning the bet
-prob = 0.4
 
 def step():
     condition = True
