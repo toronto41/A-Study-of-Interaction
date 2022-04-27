@@ -74,8 +74,11 @@ class blackjack():
      
 """ MONTE CARLO PREDICTION ALGORITHM """
 returns = [[] for i in range(400)]
+# We iterate over 5 million games of blackjack
 for i in range(5000000):
+    # We initialise an episode of blackjack
     episode = blackjack()
+    # We count reward
     reward = episode.__play__()
     lst = episode.lst
     for state in lst:
