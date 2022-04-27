@@ -12,7 +12,7 @@ state_actions = [[state,action] for state in states for action in actions]
 # We create the greedy-selection parameter, step-size constant and discount factor.
 epsilon = 0.1
 alpha = 0.5
-gamma = .95
+gamma = .9
 # We set default start and goal of our maze, will be randomised each iteration.
 start = [1,5]
 goal = [10,5]
@@ -46,7 +46,7 @@ for i in range(5):
 
 # Record of states again
 record = [elem[0] for elem in state_actions]
-# We initiate two sets of Q values
+# We instantiate two sets of Q values
 Q_A = [0 for i in range(len(state_actions))]
 Q_B = [0 for i in range(len(state_actions))]
 # Create empty policy
