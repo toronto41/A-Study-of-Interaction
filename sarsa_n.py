@@ -17,7 +17,7 @@ state_actions = [[state,action] for state in states for action in actions]
 start = [1,5]
 goal = [10,5]
 
-# We set our greedy paramater and our discouting factor
+# We set our greedy parameter and our discounting factor
 epsilon = 0.01
 gamma = .9
 # The below formats our walls.
